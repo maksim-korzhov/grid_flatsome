@@ -1,1 +1,1 @@
-# grid_flatsome
+Example of the grid layout
