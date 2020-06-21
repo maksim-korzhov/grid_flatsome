@@ -6,9 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env && process.env.NODE_ENV !== 'production';
 
 module.exports = {
+    mode: devMode ? 'development' : 'production',
     entry: './src/js/index.js',
     output: {
-        publicPath: "./",
+        publicPath: "/",
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name].js'
     },
@@ -18,7 +19,7 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /(node_modules)/,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
                         loader: 'sass-loader',
@@ -31,7 +32,7 @@ module.exports = {
         ],
     },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
         new HtmlWebpackPlugin({
             title: 'Output Management',
             template: path.join(__dirname, 'src/index.html'),
@@ -44,9 +45,12 @@ module.exports = {
             filename: 'css/[name].css'
         }),
     ],
+    devtool: 'inline-source-map',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
         compress: true,
-        port: 9000
+        publicPath: '/',
+        port: 9000,
+        hot: true
     }
 };
