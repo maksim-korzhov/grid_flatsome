@@ -6,13 +6,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env && process.env.NODE_ENV !== 'production';
 
 module.exports = {
-    entry: {
-        'js/main.js': './src/index.js',
-        'css/main.css': './src/scss/main.scss' //styles
-    },
+    entry: './src/js/index.js',
     output: {
+        publicPath: "./",
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name]'
+        filename: 'js/[name].js'
     },
     module: {
         rules: [
@@ -22,7 +20,12 @@ module.exports = {
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader',
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            sourceMap: true,
+                        }
+                    }
                 ],
             }
         ],
@@ -38,6 +41,7 @@ module.exports = {
             // both options are optional
             // filename: devMode ? '[name].css' : '[name].[hash].css',
             // chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
+            filename: 'css/[name].css'
         }),
     ],
     devServer: {
