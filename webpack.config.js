@@ -5,6 +5,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const devMode = process.env && process.env.NODE_ENV !== 'production';
 
+// TODO:
+// 1. Move images to the dist folder on compile
+// 2. Add fonts and also move them to the dist folder
+
 module.exports = {
     mode: devMode ? 'development' : 'production',
     entry: './src/js/index.js',
@@ -47,10 +51,11 @@ module.exports = {
     ],
     devtool: 'inline-source-map',
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: path.join(__dirname, 'src'),
         compress: true,
         publicPath: '/',
         port: 9000,
-        hot: true
+        hot: true,
+        watchContentBase: true,
     }
 };
