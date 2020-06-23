@@ -1,9 +1,22 @@
-$body-color: red;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+$body-color: #484848;
+$active-link-color: #0056b3;
 
 body {
   color: $body-color;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: $body-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $active-link-color;
+  }
 }
 
 .container {
@@ -12,10 +25,20 @@ body {
   width: 100%;
 }
 
+/* Layout */
 .grid {
   display: grid;
+  grid-auto-rows: auto;
+}
+
+.grid--three-columns {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-flow: row;
 }
 
 .post-item {
@@ -28,5 +51,38 @@ body {
 
   img {
     max-width: 100%;
+  }
+}
+
+/* Header */
+.header {
+  background: lightblue;
+  height: 80px;
+}
+
+/* Navigation */
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-top {
+  .nav-item {
+    line-height: 80px;
+    padding: 0 1em;
+    text-transform: uppercase;
+
+    &:hover {
+
+    }
+
+    &:first-child {
+      padding-left: 2em;
+    }
+
+    &:last-child {
+      padding-right: 2em;
+    }
   }
 }
