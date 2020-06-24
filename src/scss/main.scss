@@ -33,7 +33,7 @@ a {
 
 .grid--three-columns {
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
+  grid-gap: 1rem;
 }
 
 .flex {
@@ -55,9 +55,24 @@ a {
 }
 
 /* Header */
-.header {
+.top-header {
   background: lightblue;
   height: 80px;
+
+  &_content {
+    justify-content: space-between;
+  }
+}
+
+.logo {
+  font-size: 2em;
+  line-height: 80px;
+  padding: 0 2rem;
+  text-transform: uppercase;
+
+  &:hover {
+    color: $body-color;
+  }
 }
 
 /* Navigation */
@@ -70,7 +85,7 @@ a {
 .nav-top {
   .nav-item {
     line-height: 80px;
-    padding: 0 1em;
+    padding: 0 1rem;
     text-transform: uppercase;
 
     &:hover {
@@ -78,11 +93,11 @@ a {
     }
 
     &:first-child {
-      padding-left: 2em;
+      padding-left: 2rem;
     }
 
     &:last-child {
-      padding-right: 2em;
+      padding-right: 2rem;
     }
   }
 }
