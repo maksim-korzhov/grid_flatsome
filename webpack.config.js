@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const devMode = process.env && process.env.NODE_ENV !== 'production';
 
@@ -24,7 +25,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 use: [
                     devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    'css-loader?url=false',
                     {
                         loader: 'sass-loader',
                         options: {
@@ -40,6 +41,11 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Output Management',
             template: path.join(__dirname, 'src/index.html'),
+        }),
+        new CopyPlugin({
+            patterns: [
+                { from: path.join(__dirname, 'src/static'), to: 'static' },
+            ],
         }),
         new MiniCssExtractPlugin({
             // Options similar to the same options in webpackOptions.output

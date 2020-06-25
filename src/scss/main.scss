@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
 $body-color: #484848;
 $active-link-color: #0056b3;
 
+$main-font: 'Lato', sans-serif;
+$nav-font: 'Poppins', sans-serif;
+
 body {
   color: $body-color;
-  font-family: 'Poppins', sans-serif;
+  font-family: $main-font;
   margin: 0;
   padding: 0;
 }
@@ -56,7 +60,8 @@ a {
 
 /* Header */
 .top-header {
-  background: lightblue;
+  background: url('../static/img/pattern22.png');
+  font-family: $nav-font;
   height: 80px;
 
   &_content {
@@ -100,4 +105,9 @@ a {
       padding-right: 2rem;
     }
   }
+}
+
+/* Content */
+.page-content {
+  padding: 40px 0;
 }
