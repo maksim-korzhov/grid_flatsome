@@ -7,6 +7,9 @@ $active-link-color: #0056b3;
 $main-font: 'Lato', sans-serif;
 $nav-font: 'Poppins', sans-serif;
 
+$primary-font-color: #777;
+$secondary-font-color: #c2c2c2;
+
 body {
   color: $body-color;
   font-family: $main-font;
@@ -46,6 +49,9 @@ a {
 }
 
 .post-item {
+  &__content {
+    border: 1px solid #f2f2f2;
+  }
 }
 
 .post-image {
@@ -54,9 +60,31 @@ a {
   }
 
   img {
+    display: block;
     max-width: 100%;
   }
 }
+
+.post-description {
+  padding: 2rem 1rem;
+}
+
+.post-date,
+.post-comments {
+  color: $secondary-font-color;
+  font-size: 0.85em;
+  margin-right: 1em;
+}
+
+.post-header {
+  font-size: 1.5em;
+  margin-top: 0.5em;
+}
+
+.post-text {
+  color: $primary-font-color;
+}
+
 
 /* Header */
 .top-header {
