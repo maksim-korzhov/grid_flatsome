@@ -149,11 +149,17 @@ a {
 .list {
   list-style: none;
   padding-left: 0;
+
+  li {
+    padding: 0.5em 0;
+  }
 }
 
 .widget {
   &_title {
     font-weight: bold;
+    margin-top: 0;
+    text-transform: uppercase;
   }
 }
 
@@ -164,6 +170,11 @@ a {
 
 .footer-top {
   padding: 60px 0 40px;
+  grid-template-columns: 36% 1fr;
+}
+
+.footer-about-block {
+  padding-right: 40px;
 }
 
 .copyright-content {
