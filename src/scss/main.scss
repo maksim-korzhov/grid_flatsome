@@ -97,8 +97,18 @@ a {
     }
 
     &__link {
-        .icon-right {
-            font-size: .75em;
+        font-size: .75em;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        i {
+            position: relative;
+            right: 0;
+            transition: right .3s ease 0s;
+        }
+
+        &:hover i {
+            right: -6px;
         }
     }
 }
