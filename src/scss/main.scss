@@ -38,6 +38,11 @@ a {
   grid-auto-rows: auto;
 }
 
+.grid--two-columns {
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1rem;
+}
+
 .grid--three-columns {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
@@ -68,6 +73,7 @@ a {
   img {
     display: block;
     max-width: 100%;
+    width: 100%;
   }
 }
 
