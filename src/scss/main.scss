@@ -59,6 +59,23 @@ a {
     flex-flow: row;
 }
 
+.post-list {
+    box-sizing: border-box;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 1rem;
+
+    @media (min-width: 992px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
 .post {
     &__content {
         border: 1px solid #f2f2f2;
