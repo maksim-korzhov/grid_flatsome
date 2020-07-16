@@ -234,11 +234,7 @@ a {
 .footer-top {
     box-sizing: border-box;
     padding: 60px 1rem 40px;
-    grid-template-columns: 36% 1fr;
-
-    @media (min-width: 768px) {
-        grid-template-columns: 100%;
-    }
+    grid-template-columns: 100%;
 
     @media (min-width: 992px) {
         grid-template-columns: 36% 1fr;
@@ -249,9 +245,16 @@ a {
 
 .footer-menu {
     margin-top: 2rem;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+    }
 
     @media (min-width: 992px) {
         margin-top: 0;
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
