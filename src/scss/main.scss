@@ -232,6 +232,7 @@ a {
 }
 
 .footer-top {
+    box-sizing: border-box;
     padding: 60px 1rem 40px;
     grid-template-columns: 36% 1fr;
 
@@ -241,6 +242,8 @@ a {
 
     @media (min-width: 992px) {
         grid-template-columns: 36% 1fr;
+        max-width: 1200px;
+        margin: 0 auto;
     }
 }
 
